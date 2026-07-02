@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSLGuard Pro - SSL/TLS Certificate Scanner</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<header>
+
+<div class="logo">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h2>SSLGuard Pro</h2>
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#">Scanner</a>
+<a href="#">Features</a>
+<a href="#">About</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>SSL / TLS Certificate Scanner</h1>
+
+<p>
+
+Scan any website and inspect its SSL certificate, TLS version,
+issuer, validity, fingerprint and security information.
+
+</p>
+
+<div class="search-box">
+
+<input
+type="text"
+id="domain"
+placeholder="Enter Domain (google.com)"
+autocomplete="off"
+/>
+
+<button id="scanBtn">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Scan
+
+</button>
+
+</div>
+
+</section>
+
+<section id="loading" class="loading hidden">
+
+<div class="spinner"></div>
+
+<h2>Scanning SSL Certificate...</h2>
+
+</section>
+
+<section id="dashboard" class="hidden">
+
+<div class="summary">
+
+<div class="summary-card">
+
+<h3>Status</h3>
+
+<p id="status">-</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3>Security Score</h3>
+
+<p id="score">0%</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3>Days Remaining</h3>
+
+<p id="daysRemaining">-</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3>TLS Version</h3>
+
+<p id="tlsVersion">-</p>
+
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-globe"></i>
+
+Common Name
+
+</h3>
+
+<p id="commonName">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-building"></i>
+
+Organization
+
+</h3>
+
+<p id="organization">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-user-shield"></i>
+
+Issuer
+
+</h3>
+
+<p id="issuer">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-calendar"></i>
+
+Valid From
+
+</h3>
+
+<p id="validFrom">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Valid Until
+
+</h3>
+
+<p id="validTo">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-id-card"></i>
+
+Serial Number
+
+</h3>
+
+<p id="serialNumber">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-key"></i>
+
+Fingerprint SHA256
+
+</h3>
+
+<p id="fingerprint">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-lock"></i>
+
+Signature Algorithm
+
+</h3>
+
+<p id="signatureAlgorithm">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-certificate"></i>
+
+Public Key Algorithm
+
+</h3>
+
+<p id="publicKeyAlgorithm">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-network-wired"></i>
+
+Subject
+
+</h3>
+
+<p id="subject">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-server"></i>
+
+Issuer Details
+
+</h3>
+
+<p id="issuerDetails">-</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+<i class="fa-solid fa-shield-virus"></i>
+
+Certificate State
+
+</h3>
+
+<p id="certificateState">-</p>
+
+</div>
+
+</div>
+
+<div class="actions">
+
+<button id="copyBtn">
+
+<i class="fa-solid fa-copy"></i>
+
+Copy Details
+
+</button>
+<button id="pdfBtn">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+Download PDF
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+SSLGuard Pro © 2026
+
+</p>
+
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+
+</html>

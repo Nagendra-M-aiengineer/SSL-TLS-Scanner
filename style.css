@@ -1,0 +1,275 @@
+/* ===========================
+   SSLGuard Pro - style.css
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#08111f;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+.bg{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+    radial-gradient(circle at top left,#0f6fff33,transparent 40%),
+    radial-gradient(circle at bottom right,#00c3ff22,transparent 40%),
+    linear-gradient(135deg,#08111f,#101d34,#08111f);
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo i{
+    color:#00b7ff;
+    font-size:32px;
+}
+
+.logo h2{
+    font-size:28px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#fff;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00b7ff;
+}
+
+.hero{
+    padding:70px 8%;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:900px;
+    margin:auto;
+    color:#c7d2df;
+    line-height:1.8;
+}
+
+.search-box{
+    margin:50px auto 0;
+    max-width:900px;
+    display:flex;
+    gap:15px;
+    background:rgba(255,255,255,.06);
+    padding:20px;
+    border-radius:18px;
+    backdrop-filter:blur(12px);
+}
+
+.search-box input{
+    flex:1;
+    background:#11203a;
+    color:#fff;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    padding:18px;
+    font-size:17px;
+}
+
+.search-box button{
+    width:170px;
+    border:none;
+    cursor:pointer;
+    border-radius:12px;
+    background:#008cff;
+    color:#fff;
+    font-size:17px;
+    transition:.3s;
+}
+
+.search-box button:hover{
+    background:#00b7ff;
+    transform:translateY(-2px);
+}
+
+.loading{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin:50px 0;
+}
+
+.hidden{
+    display:none;
+}
+
+.spinner{
+    width:70px;
+    height:70px;
+    border:7px solid rgba(255,255,255,.15);
+    border-top:7px solid #00b7ff;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+#dashboard{
+    width:92%;
+    margin:40px auto;
+}
+
+.summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.summary-card{
+    background:rgba(255,255,255,.06);
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.summary-card h3{
+    color:#00b7ff;
+    margin-bottom:10px;
+}
+
+.summary-card p{
+    font-size:26px;
+    font-weight:700;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,.06);
+    border-radius:18px;
+    padding:22px;
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#00b7ff;
+    box-shadow:0 12px 25px rgba(0,183,255,.25);
+}
+
+.card h3{
+    margin-bottom:14px;
+    color:#00b7ff;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.card p{
+    color:#dfe8f1;
+    word-break:break-word;
+    line-height:1.8;
+}
+
+.actions{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin:40px 0;
+    flex-wrap:wrap;
+}
+
+.actions button{
+    background:#00a2ff;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    padding:15px 30px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.actions button:hover{
+    background:#00c3ff;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#aab6c6;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+}
+
+.hero h1{
+    font-size:36px;
+}
+
+.search-box{
+    flex-direction:column;
+}
+
+.search-box button{
+    width:100%;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}

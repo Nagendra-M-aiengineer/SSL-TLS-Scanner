@@ -1,0 +1,27 @@
+{
+  "name": "sslguard-pro",
+  "version": "1.0.0",
+  "description": "SSL/TLS Certificate Scanner built using Node.js, Express, HTML, CSS and JavaScript",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ssl",
+    "tls",
+    "certificate",
+    "scanner",
+    "security",
+    "cybersecurity"
+  ],
+  "author": "Nagendra M",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

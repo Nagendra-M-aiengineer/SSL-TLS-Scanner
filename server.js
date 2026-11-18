@@ -721,9 +721,8 @@ if (require.main === module) {
     });
 }
 
-module.exports = {
-    app,
-    parseDomainInput,
-    evaluateCertificateSecurity,
-    handleScanRequest
-};
+app.parseDomainInput = parseDomainInput;
+app.evaluateCertificateSecurity = evaluateCertificateSecurity;
+app.handleScanRequest = handleScanRequest;
+
+module.exports = app;

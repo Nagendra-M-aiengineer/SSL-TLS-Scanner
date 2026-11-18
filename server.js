@@ -7,17 +7,48 @@ const dns = require("dns");
 const net = require("net");
 const path = require("path");
 
+const fs = require("fs");
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Serve static assets from public directory and root
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(__dirname));
 
 const PORT = process.env.PORT || 5000;
 
+// Explicit static handlers for resilient Vercel serverless delivery
+app.get("/style.css", (req, res) => {
+    const pubFile = path.join(__dirname, "public", "style.css");
+    const rootFile = path.join(__dirname, "style.css");
+    res.setHeader("Content-Type", "text/css; charset=utf-8");
+    if (fs.existsSync(pubFile)) {
+        return res.sendFile(pubFile);
+    }
+    res.sendFile(rootFile);
+});
+
+app.get("/app.js", (req, res) => {
+    const pubFile = path.join(__dirname, "public", "app.js");
+    const rootFile = path.join(__dirname, "app.js");
+    res.setHeader("Content-Type", "application/javascript; charset=utf-8");
+    if (fs.existsSync(pubFile)) {
+        return res.sendFile(pubFile);
+    }
+    res.sendFile(rootFile);
+});
+
 // Home Route
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+    const pubIndex = path.join(__dirname, "public", "index.html");
+    const rootIndex = path.join(__dirname, "index.html");
+    if (fs.existsSync(pubIndex)) {
+        return res.sendFile(pubIndex);
+    }
+    res.sendFile(rootIndex);
 });
 
 // Helper: Clean domain and extract port
